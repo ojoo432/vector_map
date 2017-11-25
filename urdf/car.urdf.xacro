@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="car" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="pi" value="3.14159265359" />
+    <link name="world"/>
+    <link name="car">
+        <visual>
+            <origin xyz="0 0 0.04" rpy="0 0 ${pi}"/>
+            <geometry>
+                <mesh filename="package://vector_map/urdf/meshes/car.dae" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="world_to_car" type="fixed">
+            <parent link="world" />
+            <child link="car" />
+            <origin xyz="6.5 -8.5 0" />
+        </joint>
+</robot> 
